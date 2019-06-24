@@ -11,6 +11,19 @@ enum Environment: String {
     case production
     case testing
     case development
+    
+    var baseUrl: String {
+        switch self {
+        case .development:
+            return "Runnig on development"
+            
+        case .testing:
+            return "Runnig on testing"
+            
+        default:
+            return "Runnig on production"
+        }
+    }
 }
 
 class PKSettingsBundleHelper {
